@@ -1,9 +1,10 @@
 #include<iostream>
+int nyuryoku(int& a, int& b){
 
-int nyuryoku(int& x, int& y){
 	std::cout << "置きたい行(縦)を入力してください：";
-	std::cin >> x;
+	std::cin >> a;
 	std::cout << "置きたい列(横)を入力してください：";
-	std::cin >> y;
-	return x, y;
+	std::cin >> b;
+
+	return a, b;
 }
