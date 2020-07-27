@@ -1,7 +1,4 @@
 #include<iostream>
-#define kuro 1;
-#define shiro 2;
-
 
 void masume(int tate, int yoko){
 	int i = 0;													//ループカウンタ
@@ -15,15 +12,15 @@ void masume(int tate, int yoko){
      for(i = 0; i < tate; i++){                                 //縦に四つ表示するまでループ
     	std::cout << i + 1;                                     //行を表示
         for(j = 0; j < yoko; j++){                              //横に四つ表示するまでループ
-			if(s[i][j] == 1){
-				std::cout << " ●";
-			}else if(s[i][j] == 2){
-				std::cout << " ○";
-			}else{
-				std::cout << "  ";
+			if(s[i][j] == 1){									//配列内に1があれば
+				std::cout << " ●";								//黒石を表示
+			}else if(s[i][j] == 2){								//配列内に2があれば
+				std::cout << " ○";								//白石を表示
+			}else{												//それ以外は
+				std::cout << "  ";								//空白を表示
 			}
         }
-            std::cout << std::endl;                                         //4つ表示したら改行
+            std::cout << std::endl;                              //4つ表示したら改行
     }
 
 }

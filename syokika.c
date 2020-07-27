@@ -1,6 +1,3 @@
-#define kuro 1;
-#define shiro 2;
-
 
 void syokika(){
 	int i = 0;												//ループカウンタ

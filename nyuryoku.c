@@ -1,4 +1,5 @@
 #include<iostream>
+
 int nyuryoku(int& a, int& b){
 
 	std::cout << "置きたい行(縦)を入力してください：";
