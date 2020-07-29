@@ -5,7 +5,7 @@ void masume(int tate, int yoko){
 	int j = 0;													//ループカウンタ
 	char s[8][8];
 	std::cout << "・リバーシを開始します。" << std::endl;
-	std::cout << "・あなたは黒石(○)です。" << std::endl;
+	std::cout << "・あなたは白石(●)です。" << std::endl;
 	std::cout << std::endl;
 
 	std::cout << "  1 2 3 4 5 6 7 8" << std::endl;				//列を表示
