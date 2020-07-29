@@ -1,6 +1,6 @@
 #include<iostream>
 
-int kuro(int a, int b, int tate, int yoko){
+void kuro(int a, int b, int tate, int yoko){
 
     char s[8][8] = {0};
     int i = 0;
@@ -25,15 +25,15 @@ int kuro(int a, int b, int tate, int yoko){
         }
 
         //配列の要素に白黒の判別をつける
-        if(s[a-1][b-1] == 0){
-            s[a-1][b-1] = 1;
-            if(s[a][b-1] == 2){
-                s[a][b-1] = 1;
-            }else if(s[a-2][b-1] == 2){
-                s[a-2][b-1] = 1;
-            }else if(s[a-1][b] == 2){
-                s[a-1][b] = 1;
-            }else if (s[a-1][b-2] == 2){
+        if(s[a-1][b-1] == 0){                               //入力値のマスが空白なら
+            s[a-1][b-1] = 1;                                //黒石(判定)を置く
+            if(s[a][b-1] == 2){                             //入力値の下マスが白なら
+                s[a][b-1] = 1;                              //黒石(判定)を置く
+            }else if(s[a-2][b-1] == 2){                     //入力値の上が白なら
+                s[a-2][b-1] = 1;                            //黒石(判定)を置く
+            }else if(s[a-1][b] == 2){                       //入力値の右となりが白なら
+                s[a-1][b] = 1;                              //黒石(判定)を置く
+            }else if (s[a-1][b-2] == 2){                    //入力値の左隣が白なら
                 s[a-1][b-2] = 1;
             }       
         }
@@ -102,12 +102,10 @@ int kuro(int a, int b, int tate, int yoko){
     i = 0;                                                  //ループカウンタを初期化
     j = 0;                                                  //ループカウンタを初期化
 
+    //フラグ立てる場所
     flag++;
 
-    //フラグ立てる場所
+    }while(flag != 60);
 
 
-    }while(flag != 10);
-
-    
 }

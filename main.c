@@ -3,7 +3,7 @@
 void syokika();							//関数宣言
 void masume(int tate, int yoko);		
 int nyuryoku(int& a, int& b);
-int kuro(int a, int b, int tate, int yoko);
+void kuro(int a, int b, int tate, int yoko);
 //char shiro(int a, int b, int tate, int yoko, char *sp);
 
 
@@ -12,8 +12,7 @@ int main(void){
 	int yoko = 8;						//横のマス目用
 	int a = 0;							//行の入力用
 	int b = 0;							//列の入力用
-	int c = 0;
-	int d = 0;
+
 	//char s[8][8] = {0};
 	//char *sp[8];
 
