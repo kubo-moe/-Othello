@@ -108,4 +108,6 @@ int kuro(int a, int b, int tate, int yoko){
 
 
     }while(flag != 10);
+
+    
 }
