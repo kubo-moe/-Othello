@@ -67,7 +67,6 @@ void kuro(int a, int b, int tate, int yoko){
     }
 
     std::cout << std::endl;                                 //インデント用改行
-
     flag++;
 
     i = 0;                                                  //ループカウンタを初期化
