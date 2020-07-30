@@ -17,11 +17,23 @@ void kuro(int a, int b, int tate, int yoko){
         if(flag >= 2){
             num += 1;
             std::cout << num << "回目" << std::endl;        //回数表示
-            std::cout << "・あなたの番です。白石(●)" << std::endl;
-            std::cout << "置きたい行(縦)を入力してください：";
-	        std::cin >> a;
-            std::cout << "置きたい列(横)を入力してください：";
-	        std::cin >> b;
+            do{
+                std::cout << "・あなたの番です。白石(●)" << std::endl;
+                std::cout << "置きたい行(縦)を入力してください：";
+	            std::cin >> a;
+                if(a > 8 || a < 1){
+			        std::cout << "1~8の数字で入力して下さい。" <<std::endl;
+		        }
+	        }while(a > 8 || a < 1);
+
+            do{
+                std::cout << "置きたい列(横)を入力してください：";
+	            std::cin >> b;
+                if(a > 8 || a < 1){
+			        std::cout << "1~8の数字で入力して下さい。" <<std::endl;
+		        }
+	        }while(a > 8 || a < 1);
+
         }
 
         //配列の要素に白黒の判別をつける
@@ -62,10 +74,23 @@ void kuro(int a, int b, int tate, int yoko){
     j = 0;                                                  //ループカウンタを初期化
 
     std::cout << "相手の番です相手は黒石です(○)" << std::endl;
-    std::cout << "置きたい行(縦)を入力してください：";
-	std::cin >> a;
-	std::cout << "置きたい列(横)を入力してください：";
-	std::cin >> b;
+    do{
+        std::cout << "置きたい行(縦)を入力してください：";
+	    std::cin >> a;
+        if(a > 8 || a < 1){
+			std::cout << "1~8の数字で入力して下さい。" <<std::endl;
+		}
+	}while(a > 8 || a < 1);
+
+    do{
+	    std::cout << "置きたい列(横)を入力してください：";
+	    std::cin >> b;
+        if(a > 8 || a < 1){
+			std::cout << "1~8の数字で入力して下さい。" <<std::endl;
+		}
+	}while(a > 8 || a < 1);
+
+
 
             //配列の要素に白黒の判別をつける
         if(s[a-1][b-1] == 0){
