@@ -11,12 +11,7 @@ int main(void){
 	int yoko = 8;						//横のマス目用
 	int a = 0;							//行の入力用
 	int b = 0;							//列の入力用
-
-	//char s[8][8] = {0};
-	//char *sp[8];
-
-	//sp[8] = &s[8][8];
-
+	
 	syokika();
 	masume(tate, yoko);					//盤面の表示
 	nyuryoku(a, b);						//値の入力
