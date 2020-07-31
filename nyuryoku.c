@@ -16,10 +16,10 @@ int nyuryoku(int& a, int& b){
 		std::cout << "置きたい列(横)を入力してください：";
 		std::cin >> b;
 
-		if(a > 8 || a < 1){
+		if(b > 8 || b < 1){
 			std::cout << "1~8の数字で入力して下さい。" <<std::endl;
 		}
-	}while(a > 8 || a < 1);
+	}while(b > 8 || b < 1);
 
 	return a, b;
 }
