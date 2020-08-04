@@ -6,6 +6,7 @@ void kuro(int a, int b, int tate, int yoko){
     int i = 0;
     int j = 0;
     int k = 0;
+    int l = 0;
 
     s[3][3] = 1;											//石の有無の判別用
 	s[4][4] = 1;										    //石の有無の判別用
