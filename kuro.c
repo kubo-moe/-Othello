@@ -129,6 +129,7 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a+j][b-i] == 2 && s[a+j+1][b-i-1] == 1){//更に斜め左下が黒なら
+                    j = 1;
                     for(k = 3; k <= i; k++){
                         s[a][b-2] = 1;                       //白石(判定)を置く
                         s[a+j][b-k] = 1;                     //白石(判定)を置く
@@ -148,9 +149,10 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a-i][b+j] == 2 && s[a-i-1][b+j+1] == 1){//更に斜め右上が黒なら
+                    j = 1;
                     for(k = 3; k <= i; k++){
                         s[a-2][b] = 1;                       //白石(判定)を置く
-                        s[a-k][b+j] == 1;                    //白石(判定)を置く
+                        s[a-k][b+j] = 1;                    //白石(判定)を置く
                         j++;                                         //jをインクリメント
                     }
                     break;                                   //ループを抜ける
@@ -167,6 +169,7 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a-i][b-j] == 2 && s[a-i-1][b-j-1] == 1){   //更に斜め左上が黒なら
+                    j = 3;
                     for(k = 3; k <= i; k++){
                         s[a-2][b-2] = 1;                        //白石(判定)を置く
                         s[a-k][b-j] = 1;                        //白石(判定)を置く
@@ -186,6 +189,7 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a+i][b+j] == 2 && s[a+i+1][b+j+1] == 1){//更に斜め右下が黒なら
+                    j = 1;
                     for(k = 1; k <= i; k++){
                         s[a][b] = 1;                            //白石(判定)を置く
                         s[a+k][b+j] = 1;                        //白石(判定)を置く
@@ -330,6 +334,7 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a+j][b-i] == 1 && s[a+j+1][b-i-1] == 2){//更に斜め左下が白なら
+                    j = 1;
                     for(k = 3; k <= i; k++){
                         s[a][b-2] = 2;                       //黒石(判定)を置く
                         s[a+j][b-k] = 2;                     //黒石(判定)を置く
@@ -349,9 +354,10 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a-i][b+j] == 1 && s[a-i-1][b+j+1] == 2){//更に斜め右上が白なら
+                    j = 1;
                     for(k = 3; k <= i; k++){
                         s[a-2][b] = 2;                          //黒石(判定)を置く
-                        s[a-k][b+j] == 2;                       //黒石(判定)を置く
+                        s[a-k][b+j] = 2;                       //黒石(判定)を置く
                         j++;                                    //jをインクリメント
                     }
                     break;                                      //ループを抜ける
@@ -368,6 +374,7 @@ void kuro(int a, int b, int tate, int yoko){
                     break;
                 }
                 if(s[a-i][b-j] == 1 && s[a-i-1][b-j-1] == 2){//更に斜め左上が白なら
+                    j = 3;
                     for(k = 3; k <= i; k++){
                         s[a-2][b-2] = 2;                     //黒石(判定)を置く
                         s[a-k][b-j] = 2;                     //黒石(判定)を置く
@@ -388,6 +395,7 @@ void kuro(int a, int b, int tate, int yoko){
                     break;                                  //黒石(判定)を置く
                 }
                 if(s[a+i][b+j] == 1 && s[a+i+1][b+j+1] == 2){//更に斜め右下が白なら
+                    j = 1;
                     for(k = 1; k <= i; k++){
                         s[a][b] = 2;                         //黒石(判定)を置く
                         s[a+k][b+j] = 2;                     //黒石(判定)を置く
