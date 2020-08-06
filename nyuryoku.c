@@ -4,6 +4,7 @@ int nyuryoku(int& a, int& b){
 
 
 	do{
+		std::cout << std::endl;
 		std::cout << "・置きたい行(縦)を入力してください：";
 		std::cin >> a;
 
@@ -21,5 +22,6 @@ int nyuryoku(int& a, int& b){
 		}
 	}while(b > 8 || b < 1);
 
+	std::cout << std::endl;
 	return a, b;
 }
