@@ -23,10 +23,11 @@ void kuro(int a, int b, int tate, int yoko){
             do{
                 std::cout << "・あなたの番です。白石(●)" << std::endl;           //テキストを表示
                 std::cout << "・スキップする場合は0を入力してください。" << std::endl;
+                std::cout << "・終了するときは9を入力してください。" << std::endl;
 
                 std::cout << "置きたい行(縦)を入力してください：";               //テキストを表示
 	            std::cin >> a;                                                  //数値の入力
-                if(a == 0){
+                if(a == 0 || a == 9){
                     break;
                 }
                 if(a > 8 || a < 1){                                             //指定外の数値が入力されたら
@@ -34,7 +35,7 @@ void kuro(int a, int b, int tate, int yoko){
 		        }
 	        }while(a > 8 || a < 1);                                             //指定範囲外の数値が入力されたらループ
 
-            if(a != 0){
+            if(a != 0 && a != 9){
                 do{
                     std::cout << "置きたい列(横)を入力してください：";            //テキストを表示
 	                std::cin >> b;                                              //数値の入力
@@ -287,16 +288,20 @@ void kuro(int a, int b, int tate, int yoko){
         std::cout << std::endl;                                                 //インデント用改行
         flag++;
         }
+        if(a == 9){
+            break;
+        }
 
         i = 0;                                                                  //ループカウンタを初期化
         j = 0;                                                                  //ループカウンタを初期化
 
-        std::cout << "相手の番です相手は黒石です(○)" << std::endl;               //テキストを表示
+        std::cout << "・相手の番です。相手は黒石です(○)" << std::endl;           //テキストを表示
         std::cout << "・スキップする場合は0を入力してください。" << std::endl;
+        std::cout << "・終了するときは9を入力してください。" << std::endl;
         do{
             std::cout << "置きたい行(縦)を入力してください：";                   //テキストを表示
 	        std::cin >> a;                                                     //数値の入力
-            if(a == 0){
+            if(a == 0 || a == 9){
                 break;
             }
             if(a > 8 || a < 1){                                                //指定外の数値が入力されたら
@@ -304,7 +309,7 @@ void kuro(int a, int b, int tate, int yoko){
 		    }
 	    }while(a > 8 || a < 1);                                                //指定範囲外の数値が入力されたらループ
 
-        if(a != 0){
+        if(a != 0 && a != 9){
             do{
 	            std::cout << "置きたい列(横)を入力してください：";              //テキストを表示
 	            std::cin >> b;                                                 //数値の入力
@@ -562,6 +567,10 @@ void kuro(int a, int b, int tate, int yoko){
 
             //フラグ立てる場所
             flag++;
+
+            if(a == 9){
+                break;
+            }
         
     }while(flag != 80);
 
