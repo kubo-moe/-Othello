@@ -255,11 +255,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
                             s[a - k][b + j] = 1; //白石(判定)を置く
-                            if (s[a - k][7])
+                            if (s[a - k][(b + j) >= 7])
                             {
                                 break;
                             }
-                            else if (s[0][b + j])
+                            else if (s[(a - k) <= 0][b + j])
                             {
                                 break;
                             }
@@ -297,11 +297,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
                             s[a - k][b - j] = 1; //白石(判定)を置く
-                            if (s[a - k][0])
+                            if (s[a - k][(b - j) <= 0])
                             {
                                 break;
                             }
-                            else if (s[0][b - j])
+                            else if (s[(a - k) <= 0][b - j])
                             {
                                 break;
                             }
@@ -339,11 +339,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 1; k <= i; k++)
                         {                        //ループカウンタ
                             s[a + k][b + j] = 1; //白石(判定)を置く
-                            if (s[a + k][7])
+                            if (s[a + k][(b + j) >= 7])
                             {
                                 break;
                             }
-                            else if (s[7][b + j])
+                            else if (s[(a + k) >= 7][b + j])
                             {
                                 break;
                             }
@@ -574,11 +574,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
                             s[a + j][b - k] = 2; //黒石(判定)を置く
-                            if (s[7][b - k])
+                            if (s[(a + j) >= 7][b - k])
                             {
                                 break;
                             }
-                            else if (s[a + j][0])
+                            else if (s[a + j][(b - k) <= 0])
                             {
                                 break;
                             }
@@ -616,11 +616,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
                             s[a - k][b + j] = 2; //黒石(判定)を置く
-                            if (s[a - k][7])
+                            if (s[a - k][(b + j) >= 7])
                             {
                                 break;
                             }
-                            else if (s[0][b + j])
+                            else if (s[(a - k) <= 0][b + j])
                             {
                                 break;
                             }
@@ -658,11 +658,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
                             s[a - k][b - j] = 2; //黒石(判定)を置く
-                            if (s[a - k][0])
+                            if (s[a - k][(b - j) <= 0])
                             {
                                 break;
                             }
-                            else if (s[0][b - j])
+                            else if (s[(a - k) <= 0][b - j])
                             {
                                 break;
                             }
@@ -701,11 +701,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 1; k <= i; k++)
                         {                        //ループカウンタ
                             s[a + k][b + j] = 2; //黒石(判定)を置く
-                            if (s[a + k][7])
+                            if (s[a + k][(b + j) >= 7])
                             {
                                 break;
                             }
-                            else if (s[7][b + j])
+                            else if (s[(a + k) >= 7][b + j])
                             {
                                 break;
                             }
