@@ -1,3 +1,4 @@
+ 
 #include<iostream>
 
 void kuro(int a, int b, int tate, int yoko){
