@@ -166,6 +166,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a][b-2] = 1;                                              //白石(判定)を置く
                     for(k = 3; k <= i; k++){                                    //ループカウンタ
                         s[a+j][b-k] = 1;                                        //白石(判定)を置く
+                        if(s[7][b-k]){
+                            break;
+                        }else if(s[a+j][0]){
+                            break;
+                        }
                        
                         j++;                                                    //jをインクリメント
                     }
@@ -194,7 +199,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a-2][b] = 1;                                              //白石(判定)を置く
                     for(k = 3; k <= i; k++){                                    //ループカウンタ
                         s[a-k][b+j] = 1;                                        //白石(判定)を置く
-                        
+                        if(s[a-k][7]){
+                            break;
+                        }else if(s[0][b+j]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける
@@ -222,7 +231,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a-2][b-2] = 1;                                            //白石(判定)を置く
                     for(k = 3; k <= i; k++){                                    //ループカウンタ
                         s[a-k][b-j] = 1;                                        //白石(判定)を置く
-                        
+                        if(s[a-k][0]){
+                            break;
+                        }else if(s[0][b-j]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける
@@ -250,6 +263,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a][b] = 1;                                                //白石(判定)を置く
                     for(k = 1; k <= i; k++){                                    //ループカウンタ
                         s[a+k][b+j] = 1;                                        //白石(判定)を置く
+                        if(s[a+k][7]){
+                            break;
+                        }else if(s[7][b+j]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける
@@ -259,10 +277,11 @@ void kuro(int a, int b, int tate, int yoko){
         }
 
         //盤面表示
+        std::cout << std::endl;
         std::cout << "  1 2 3 4 5 6 7 8" << std::endl;			                //列を表示
-        for(i = 0; i < tate; i++){                                              //縦に8つ表示するまでループ
-            std::cout << i + 1;                                                 //行を表示
-            for(j = 0; j < yoko; j++){                                          //横に8つ表示するまでループ
+        for(i = 0; i < tate; i++){                                             //縦に8つ表示するまでループ
+            std::cout << i+1;                                                     //行を表示
+            for(j = 0; j < yoko; j++){                                         //横に8つ表示するまでループ
 			    if(s[i][j] == 1){								                //配列内に1があれば
 				    std::cout << " ●";							                //黒石を表示
 			    }else if(s[i][j] == 2){							                //配列内に2があれば
@@ -425,7 +444,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a][b-2] = 2;                                              //黒石(判定)を置く
                     for(k = 3; k <= i; k++){                                    //ループカウンタ
                         s[a+j][b-k] = 2;                                        //黒石(判定)を置く
-                       
+                        if(s[7][b-k]){
+                            break;
+                        }else if(s[a+j][0]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける
@@ -453,7 +476,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a-2][b] = 2;                                              //黒石(判定)を置く
                     for(k = 3; k <= i; k++){                                    //ループカウンタ
                         s[a-k][b+j] = 2;                                        //黒石(判定)を置く
-                       
+                        if(s[a-k][7]){
+                            break;
+                        }else if(s[0][b+j]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける
@@ -481,7 +508,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a-2][b-2] = 2;                                            //黒石(判定)を置く
                     for(k = 3; k <= i; k++){                                    //ループカウンタ
                         s[a-k][b-j] = 2;                                        //黒石(判定)を置く
-                       
+                        if(s[a-k][0]){
+                            break;
+                        }else if(s[0][b-j]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける                   
@@ -510,7 +541,11 @@ void kuro(int a, int b, int tate, int yoko){
                     s[a][b] = 2;                                                //黒石(判定)を置く
                     for(k = 1; k <= i; k++){                                    //ループカウンタ
                         s[a+k][b+j] = 2;                                        //黒石(判定)を置く
-                       
+                        if(s[a+k][7]){
+                            break;
+                        }else if(s[7][b+j]){
+                            break;
+                        }
                         j++;                                                    //jをインクリメント
                     }
                     break;                                                      //ループを抜ける
@@ -521,9 +556,10 @@ void kuro(int a, int b, int tate, int yoko){
 
 
             //盤面表示
+            std::cout << std::endl;
             std::cout << "  1 2 3 4 5 6 7 8" << std::endl;		                //列を表示
             for(i = 0; i < tate; i++){                                          //縦に8つ表示するまでループ
-                std::cout << i + 1;                                             //行を表示
+                std::cout << i+1;                                             //行を表示
                 for(j = 0; j < yoko; j++){                                      //横に8つ表示するまでループ
 			        if(s[i][j] == 1){								            //配列内に1があれば
 				        std::cout << " ●";							            //黒石を表示
@@ -563,7 +599,7 @@ void kuro(int a, int b, int tate, int yoko){
         std::cout << "あいての石の数は" << shiroishi << "個です。" << std::endl;
         
         if(kuroishi > shiroishi){
-            std::cout << kuroishi - shiroishi <<"個差であなたの勝ちです。" << std::endl;
+            std::cout << kuroishi - shiroishi <<"個差であいての勝ちです。" << std::endl;
         }else if(shiroishi > kuroishi){
             std::cout << shiroishi - kuroishi <<"個差であなたの勝ちです。" << std::endl;
         }else{
