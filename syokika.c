@@ -1,4 +1,3 @@
-
 void syokika(){
 	int i = 0;												//ループカウンタ
     char s[8][8] = {0};
