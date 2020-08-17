@@ -212,11 +212,11 @@ void kuro(int a, int b, int tate, int yoko)
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
                             s[a + j][b - k] = 1; //白石(判定)を置く
-                            if (s[7][b - k])
+                            if (s[(a + j) >= 7][b - k])
                             {
                                 break;
                             }
-                            else if (s[a + j][0])
+                            else if (s[a + j][(b - k) <= 0])
                             {
                                 break;
                             }
@@ -291,11 +291,12 @@ void kuro(int a, int b, int tate, int yoko)
                         break;
                     }
                     if (s[a - i][b - j] == 2 && s[a - i - 1][b - j - 1] == 1)
-                    {                        //iマス左上が黒且つその左上が白なら
-                        j = 3;               //列用のカウンタ
+                    { //iマス左上が黒且つその左上が白なら
+
                         s[a - 2][b - 2] = 1; //白石(判定)を置く
                         for (k = 3; k <= i; k++)
                         {                        //ループカウンタ
+                            j = 3;               //列用のカウンタ
                             s[a - k][b - j] = 1; //白石(判定)を置く
                             if (s[a - k][(b - j) <= 0])
                             {
