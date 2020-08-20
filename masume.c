@@ -1,10 +1,9 @@
 #include <iostream>
 
-void masume(int tate, int yoko)
+void masume(int tate, int yoko, int s[8][8])
 {
 	int i = 0; //ループカウンタ
 	int j = 0; //ループカウンタ
-	char s[8][8];
 	std::cout << "・リバーシを開始します。" << std::endl;
 	std::cout << "・あなたは白石(●)です。" << std::endl;
 	std::cout << std::endl;

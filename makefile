@@ -5,7 +5,8 @@ SRC = main.c
 SRC += syokika.c
 SRC += masume.c
 SRC += nyuryoku.c
-SRC += kuro.c
+SRC += reversi.c
+SRC += kekka.c
 OBJ += $(SRC:.c = .o)
 
 default:
