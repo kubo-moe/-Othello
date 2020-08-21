@@ -1,6 +1,6 @@
 #include <iostream>
 void masume(int tate, int yoko, int s[8][8], int &flag);
-
+int uesita(int a, int b, int w, int black, int sk, int counter, int (&s)[8][8]);
 int shiro(int &a, int b, int tate, int yoko, int (&s)[8][8], int &flag, int &num)
 {
     int i = 0, j = 0, k = 0;      //ループカウンタ
@@ -8,6 +8,7 @@ int shiro(int &a, int b, int tate, int yoko, int (&s)[8][8], int &flag, int &num
     int w = 0, black = 0, sk = 0; //白・黒・空白の数値格納用
     const char *moji[30][30];     //日本語の文字列の格納用
     const char *ishi[30][30];     //日本語の文字列の格納用
+    int counter = 0;
     do
     {
         if (sp > np)
@@ -24,7 +25,6 @@ int shiro(int &a, int b, int tate, int yoko, int (&s)[8][8], int &flag, int &num
             moji[30][30] = "相手";
             ishi[30][30] = "黒石(○)";
         }
-
         if (flag >= 1)
         {                                            //フラグが2以上の時
             std::cout << num << "回目" << std::endl; //回数表示
@@ -66,68 +66,7 @@ int shiro(int &a, int b, int tate, int yoko, int (&s)[8][8], int &flag, int &num
             {                        //入力値のマスが空白なら
                 s[a - 1][b - 1] = w; //白石(判定)を置く
             }
-
-            //縦横の相手の石の判定
-            //下の処理
-            if (s[a][b - 1] == black)
-            {                           //入力値の下マスが黒なら
-                for (i = 1; i < 8; i++) //ループカウンタ
-                {
-                    if (s[a][b - 1] == black && s[a + 1][b - 1] == sk)
-                    {          //下が黒且つその下が空白の時
-                        break; //ループを抜ける
-                    }
-                    if (s[a][b - 1] == black && s[a + 1][b - 1] == w)
-                    {                    //下が黒且つその下が白なら
-                        s[a][b - 1] = w; //白石(判定)を置く
-                        break;           //ループを抜ける
-                    }
-
-                    if (s[a + i][b - 1] == black && s[a + i + 1][b - 1] == sk)
-                    { //iマス下が黒且つその下が空白なら
-                        break;
-                    }
-                    if (s[a + i][b - 1] == black && s[a + i + 1][b - 1] == w)
-                    {                    //iマス下が黒且つその下が白なら
-                        s[a][b - 1] = w; //白石(判定)を置く
-                        for (k = 1; k <= i; k++)
-                        {                        //ループカウンタ
-                            s[a + k][b - 1] = w; //白石(判定)を置く
-                        }
-                        break; //ループを抜ける
-                    }
-                }
-            }
-            //上の処理
-            if (s[a - 2][b - 1] == black)
-            { //入力値の上が黒なら
-                for (i = 3; i < 8; i++)
-                { //ループカウンタ
-                    if (s[a - 2][b - 1] == black && s[a - 3][b - 1] == sk)
-                    {          //上が黒且つその上が空白なら
-                        break; //ループを抜ける
-                    }
-                    if (s[a - 2][b - 1] == black && s[a - 3][b - 1] == w)
-                    {                        //上が黒且つその上が白なら
-                        s[a - 2][b - 1] = w; //白石(判定)を置く
-                        break;               //ループを抜ける
-                    }
-
-                    if (s[a - i][b - 1] == black && s[a - i - 1][b - 1] == sk)
-                    { //iマス上が黒且つその上が空白なら
-                        break;
-                    }
-                    if (s[a - i][b - 1] == black && s[a - i - 1][b - 1] == w)
-                    {                        //iマス上が黒且つその上が白なら
-                        s[a - 2][b - 1] = w; //白石(判定)を置く
-                        for (k = 3; k <= i; k++)
-                        {                        //ループカウンタ
-                            s[a - k][b - 1] = w; //白石(判定)を置く
-                        }
-                        break; //ループを抜ける
-                    }
-                }
-            }
+            uesita(a, b, w, black, sk, counter, s);
             //右隣の処理
             if (s[a - 1][b] == black)
             { //入力値の右隣が黒なら
