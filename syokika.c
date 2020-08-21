@@ -1,7 +1,6 @@
 int syokika(int (&s)[8][8])
 {
-	int i = 0; //ループカウンタ
-	int j = 0; //ループカウンタ
+	int i = 0, j = 0; //ループカウンタ
 	for (i = 0; i < 8; i++)
 	{
 		for (j = 0; j < 8; j++)
