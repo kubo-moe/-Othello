@@ -1,13 +1,13 @@
 #include <iostream>
+void masume(int tate, int yoko, int s[8][8], int &flag);
 
 int shiro(int &a, int b, int tate, int yoko, int (&s)[8][8], int &flag, int &num)
 {
-    int i = 0, j = 0, k = 0; //ループカウンタ
-    int sp = 1;              //自分用の印
-    int np = 0;              //相手用の印
-    int w = 0, black = 0, sk = 0;
-    const char *moji[30][30];
-    const char *ishi[30][30];
+    int i = 0, j = 0, k = 0;      //ループカウンタ
+    int sp = 1, np = 0;           //自分用と相手用の印
+    int w = 0, black = 0, sk = 0; //白・黒・空白の数値格納用
+    const char *moji[30][30];     //日本語の文字列の格納用
+    const char *ishi[30][30];     //日本語の文字列の格納用
     do
     {
         if (sp > np)
@@ -326,33 +326,10 @@ int shiro(int &a, int b, int tate, int yoko, int (&s)[8][8], int &flag, int &num
                     j++; //jをインクリメント
                 }
             }
-
-            //盤面表示
-            std::cout << std::endl;
-            std::cout << "  1 2 3 4 5 6 7 8" << std::endl; //列を表示
-            for (i = 0; i < tate; i++)
-            {                       //縦に8つ表示するまでループ
-                std::cout << i + 1; //行を表示
-                for (j = 0; j < yoko; j++)
-                { //横に8つ表示するまでループ
-                    if (s[i][j] == 1)
-                    {                      //配列内に1があれば
-                        std::cout << " ●"; //黒石を表示
-                    }
-                    else if (s[i][j] == 2)
-                    {                      //配列内に2があれば
-                        std::cout << " ○"; //白石を表示
-                    }
-                    else
-                    {                      //それ以外は
-                        std::cout << "  "; //空白を表示
-                    }
-                }
-                std::cout << std::endl; //4つ表示したら改行
-            }
-            std::cout << std::endl; //インデント用改行
             flag++;
             num++;
+            masume(tate, yoko, s, flag); //盤面表示
+            std::cout << std::endl;      //インデント用改行
         }
         if (sp > np)
         {
