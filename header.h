@@ -8,3 +8,5 @@ void masume(int tate, int yoko, int s[8][8]);
 int uesita(int a, int b, int w, int black, int sk, int counter, int (&s)[8][8]);
 int yoko(int a, int b, int w, int black, int sk, int counter, int (&s)[8][8]);
 int migiue(int a, int b, int w, int black, int sk, int counter, int (&s)[8][8]);
+int migishita(int a, int b, int w, int black, int sk, int counter,
+              int (&s)[8][8]);
