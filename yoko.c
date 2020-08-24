@@ -57,7 +57,7 @@ int yoko(int a, int b, int w, int black, int sk, int counter, int (&s)[8][8]) {
       }
     }
     counter++;
-  } while (counter <= 1);
+  } while (counter <= 2);
   migiue(a, b, w, black, sk, counter, s);
   return s[8][8];
 }
