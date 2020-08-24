@@ -1,3 +1,4 @@
+#include "header.h"
 int migiue(int a, int b, int w, int black, int sk, int counter,
            int (&s)[8][8]) {
   int mu = 0, hs = 0, ma = 0, ha = 0, mb = 0;
@@ -6,19 +7,11 @@ int migiue(int a, int b, int w, int black, int sk, int counter,
   counter = 0;
   do {
     if (counter == 0) {
-      mu = -2;
-      hs = 0;
-      ma = -1;
-      mb = 1;
-      ii = 3;
-      kk = 3;
+      mu = -2, hs = 0, ma = -1, mb = 1;
+      ii = 3, kk = 3;
     } else {
-      mu = 0;
-      hs = -2;
-      ma = 1;
-      mb = -1;
-      ii = 3;
-      kk = 3;
+      mu = 0, hs = -2, ma = 1, mb = -1;
+      ii = 3, kk = 3;
     }
     if (s[a + mu][b + hs] == black) {  //入力値の斜め右上が黒なら
       j = 1;                           //列用のカウンタ
@@ -75,5 +68,6 @@ int migiue(int a, int b, int w, int black, int sk, int counter,
     }
     counter++;
   } while (counter <= 2);
+  migishita(a, b, w, black, sk, counter, s);
   return s[8][8];
 }
