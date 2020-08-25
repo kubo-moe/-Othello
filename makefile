@@ -6,10 +6,8 @@ SRC += syokika.c
 SRC += masume.c
 SRC += nyuryoku.c
 SRC += reversi.c
-SRC += uesita.c
-SRC += yoko.c
-SRC += naname1.c
-SRC += naname2.c
+SRC += tateyoko.c
+SRC += naname.c
 SRC += kekka.c
 
 OBJ += $(SRC:.c = .o)
