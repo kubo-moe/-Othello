@@ -1,4 +1,4 @@
-//#include "header.h"
+#include "header.h"
 int uesita(int a, int b, int w, int black, int sk, int counter,
            int (&s)[8][8]) {
   int us = 0, nus = 0, mu = 0, nyk = 0, yk = 0;
@@ -83,6 +83,6 @@ int uesita(int a, int b, int w, int black, int sk, int counter,
     }
     counter++;
   } while (counter <= 4);
-  // yoko(a, b, w, black, sk, counter, s);
+  migiue(a, b, w, black, sk, counter, s);
   return s[8][8];
 }
