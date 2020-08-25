@@ -59,31 +59,30 @@ int uesita(int a, int b, int w, int black, int sk, int counter,
           }
           if (s[a - 1][b + i] == black &&
               s[a - 1][b + i + nyk] == w) {  // iマス右が黒且つその右が白なら
-            s[a - 1][b + yk] = w;        //白石(判定)を置く
+            s[a - 1][b] = w;                 //白石(判定)を置く
             for (k = kk; k <= i; k++) {  //ループカウンタ
               s[a - 1][b + k] = w;       //白石(判定)を置く
             }
             break;  //ループを抜ける
           }
-          if (us == -1 && mu == -2) {
-            if (s[a - 1][b - i] == black &&
-                s[a - 1][b - i + nyk] == sk) {  //さらにその左隣が空白なら
-              break;
+        } else if (us == -1 && mu == -2) {
+          if (s[a - 1][b - i] == black &&
+              s[a - 1][b - i + nyk] == sk) {  //さらにその左隣が空白なら
+            break;
+          }
+          if (s[a - 1][b - i] == black &&
+              s[a - 1][b - i + nyk] == w) {  //さらにその左隣が黒なら
+            s[a - 1][b + mu] = w;            //白石(判定)を置く
+            for (k = kk; k <= i; k++) {      //ループカウンタ
+              s[a - 1][b - k] = w;           //白石(判定)を置く
             }
-            if (s[a - 1][b - i] == black &&
-                s[a - 1][b - i + nyk] == w) {  //さらにその左隣が黒なら
-              s[a - 1][b + yk] = w;            //白石(判定)を置く
-              for (k = kk; k <= i; k++) {      //ループカウンタ
-                s[a - 1][b - k] = w;           //白石(判定)を置く
-              }
-              break;  //ループを抜ける
-            }
+            break;  //ループを抜ける
           }
         }
       }
     }
     counter++;
-  } while (counter <= 3);
+  } while (counter <= 4);
   // yoko(a, b, w, black, sk, counter, s);
   return s[8][8];
 }
