@@ -2,13 +2,13 @@ MAKE = make
 GCC = g++
 OUT = a.out
 SRC = main.c
-SRC += initialization.c
-SRC += board.c
+SRC += initialize.c
+SRC += display.c
 SRC += input.c
 SRC += reversi.c
-SRC += updown.c
+SRC += decision.c
 SRC += diagonal.c
-SRC += result.c
+SRC += output.c
 
 OBJ += $(SRC:.c = .o)
 
