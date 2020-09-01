@@ -1,10 +1,12 @@
 #include <iostream>
 
 void display(int s[8][8]) {
-  std::cout << "・リバーシを開始します。" << std::endl;
-  std::cout << "・あなたは白石(●)です。" << std::endl;
-  std::cout << std::endl;
-
+  int counter = 0;
+  if (counter == 0) {
+    std::cout << "・リバーシを開始します。" << std::endl;
+    std::cout << "・あなたは白石(●)です。" << std::endl;
+    std::cout << std::endl;
+  }
   std::cout << "  1 2 3 4 5 6 7 8" << std::endl;  //列を表示
   for (int i = 0; i < 8; i++) {    //縦に四つ表示するまでループ
     std::cout << i + 1;            //行を表示
@@ -19,4 +21,5 @@ void display(int s[8][8]) {
     }
     std::cout << std::endl;  // 4つ表示したら改行
   }
+  counter++;
 }
