@@ -1,5 +1,5 @@
-int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
-             int (&s)[8][8]) {
+void diagonal(int a, int b, int myturn, int opponent, int space, int counter,
+              int (&s)[8][8]) {
   int up = 0, side = 0, ctrl = 0, adjust = 0;
   counter = 0;
   int i = 0, j = 0, k = 0, ii = 0, jj = 0, kk = 0;
@@ -20,23 +20,11 @@ int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
     if (s[a + up][b + side] == opponent) {  //入力値の斜め隣が敵石なら
       j = jj;                               //列用のカウンタ
       for (i = ii; i < 8; i++) {            //ループカウンタ
-        if (s[a + up][b + side] == myturn &&
-            s[a + up + ctrl][b + side + adjust] ==
-                space) {  //隣が敵石且つその隣が空白なら
-          break;          //ループを抜ける
-        }
-        if (s[a + up][b + side] == opponent &&
-            s[a + up + ctrl][b + side + adjust] ==
-                myturn) {  //入力値の斜め隣が敵石且つその斜め隣が自石なら
+        if (s[a + up + ctrl][b + side + adjust] ==
+            myturn) {  //入力値の斜め隣が敵石且つその斜め隣が自石なら
           s[a + up][b + side] = myturn;  //自石(判定)を置く
-          break;                         //ループを抜ける
         }
-        if (up == -2 && side == 0) {
-          if (s[a - i][b + j] == opponent &&
-              s[a - i + ctrl][b + j + adjust] ==
-                  space) {  // iマス斜め隣が敵石且つその斜め隣が空白なら
-            break;
-          }
+        if (up == -2 && side == 0) {  //右上判定の時
           if (s[a - i][b + j] == opponent &&
               s[a - i + ctrl][b + j + adjust] ==
                   myturn) {  // iマス斜め隣が敵石且つその斜め隣が自石なら
@@ -46,15 +34,8 @@ int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
               s[a - k][b + j] = myturn;  //自石(判定)を置く
               j++;                       // jをインクリメント
             }
-            j = 1;
-            break;  //ループを抜ける
           }
         } else if (up == 0 && side == -2) {
-          if (s[a + j][b - i] == opponent &&
-              s[a + j + ctrl][b - i + adjust] ==
-                  space) {  // iマス斜め隣が敵石且つ更に斜め隣が空白なら
-            break;  //ループを抜ける
-          }
           if (s[a + j][b - i] == opponent &&
               s[a + j + ctrl][b - i + adjust] ==
                   myturn) {  // iマス斜め隣が敵石且つ更に斜め隣が自石なら
@@ -64,15 +45,8 @@ int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
               s[a + j][b - k] = myturn;  //自石(判定)を置く
               j++;                       // jをインクリメント
             }
-            j = 1;
-            break;
           }
         } else if (up == 0 && side == 0) {
-          if (s[a + i][b + j] == opponent &&
-              s[a + i + ctrl][b + j + ctrl] ==
-                  space) {  // iマス斜め隣が敵石且つその斜め隣が空白なら
-            break;
-          }
           if (s[a + i][b + j] == opponent &&
               s[a + i + ctrl][b + j + ctrl] ==
                   myturn) {  // iマス斜め隣が敵石且つその斜め隣が自石なら
@@ -82,15 +56,8 @@ int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
               s[a + k][b + j] = myturn;  //自石(判定)を置く
               j++;                       // jをインクリメント
             }
-            j = jj;
-            break;  //ループを抜ける
           }
         } else if (up == -2 && side == -2) {
-          if (s[a - i][b - j] == opponent &&
-              s[a - i + ctrl][b - j + ctrl] ==
-                  space) {  // iマス斜め隣が敵石且つその斜め隣が空白なら
-            break;
-          }
           if (s[a - i][b - j] == opponent &&
               s[a - i + ctrl][b - j + ctrl] ==
                   myturn) {  // iマス斜め隣が敵石且つその斜め隣が白なら
@@ -100,8 +67,6 @@ int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
               s[a - k][b - j] = myturn;  //自石(判定)を置く
               j++;                       // jをインクリメント
             }
-            j = jj;
-            break;  //ループを抜ける
           }
         }
         j++;  // jをインクリメント
@@ -109,5 +74,4 @@ int diagonal(int a, int b, int myturn, int opponent, int space, int counter,
     }
     counter++;
   } while (counter <= 4);
-  return s[8][8];
 }
