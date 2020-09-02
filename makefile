@@ -2,13 +2,13 @@ MAKE = make
 GCC = g++
 OUT = a.out
 SRC = main.c
-SRC += syokika.c
-SRC += masume.c
-SRC += nyuryoku.c
+SRC += initialize.c
+SRC += display.c
+SRC += input.c
 SRC += reversi.c
-SRC += tateyoko.c
-SRC += naname.c
-SRC += kekka.c
+SRC += decision.c
+SRC += diagonal.c
+SRC += output.c
 
 OBJ += $(SRC:.c = .o)
 
