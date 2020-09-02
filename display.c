@@ -3,6 +3,7 @@
 void display(int s[8][8]) {
   int counter = 0;
   if (counter == 0) {
+    std::cout << std::endl;
     std::cout << "・リバーシを開始します。" << std::endl;
     std::cout << "・あなたは白石(●)です。" << std::endl;
     std::cout << std::endl;
