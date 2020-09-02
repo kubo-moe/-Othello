@@ -14,14 +14,14 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
     } else if (counter == 3) {
       up = -1, side = -2, spare = 0, reserve = -1, ii = 3, kk = 3;  //左の判定
     }
-    if (s[a + up][b + side] == opponent) {  //入力値の上隣左右が敵の石なら
+    if (s[a + up][b + side] == opponent) {  //入力値の上下左右が敵の石なら
       for (i = ii; i < 8; i++)              //ループカウンタ
       {
         if (s[a + up + spare][b + side + reserve] ==
             myturn) {  //置かれた石の隣が敵石且つその隣が自石なら
           s[a + up][b + side] = myturn;  //自石(判定)を置く
         }
-        if (up == -2) {
+        if (up == -2) {  //上判定の時
           if (s[a - i][b - 1] == opponent &&
               s[a + spare - i][b - 1] ==
                   myturn) {  // iマス隣が敵石且つその隣が自石なら
@@ -30,7 +30,7 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
               s[a - k][b - 1] = myturn;  //自石(判定)を置く
             }
           }
-        } else if (up == 0) {
+        } else if (up == 0) {  //下判定の時
           if (s[a + i][b - 1] == opponent &&
               s[a + spare + i][b - 1] ==
                   myturn) {  // iマス隣が敵石且つその隣が自石なら
@@ -39,7 +39,7 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
               s[a + k][b - 1] = myturn;  //自石(判定)を置く
             }
           }
-        } else if (up == -1 && side == 0) {
+        } else if (up == -1 && side == 0) {  //右判定の時
           if (s[a - 1][b + i] == opponent &&
               s[a - 1][b + i + reserve] ==
                   myturn) {  // iマス右が敵石且つその右が自石なら
@@ -48,7 +48,7 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
               s[a - 1][b + k] = myturn;  //自石(判定)を置く
             }
           }
-        } else if (up == -1 && side == -2) {
+        } else if (up == -1 && side == -2) {  //左判定の時
           if (s[a - 1][b - i] == opponent &&
               s[a - 1][b - i + reserve] ==
                   myturn) {  // iマス左隣が敵石且つその隣が自石なら
