@@ -20,7 +20,6 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
         if (s[a + up + spare][b + side + reserve] ==
             myturn) {  //置かれた石の隣が敵石且つその隣が自石なら
           s[a + up][b + side] = myturn;  //自石(判定)を置く
-          break;                         //ループを抜ける
         }
         if (up == -2) {
           if (s[a - i][b - 1] == opponent &&
@@ -30,7 +29,6 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
             for (k = kk; k <= i; k++) {  //ループカウンタ
               s[a - k][b - 1] = myturn;  //自石(判定)を置く
             }
-            break;  //ループを抜ける
           }
         } else if (up == 0) {
           if (s[a + i][b - 1] == opponent &&
@@ -40,7 +38,6 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
             for (k = kk; k <= i; k++) {  //ループカウンタ
               s[a + k][b - 1] = myturn;  //自石(判定)を置く
             }
-            break;  //ループを抜ける
           }
         } else if (up == -1 && side == 0) {
           if (s[a - 1][b + i] == opponent &&
@@ -50,7 +47,6 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
             for (k = kk; k <= i; k++) {  //ループカウンタ
               s[a - 1][b + k] = myturn;  //自石(判定)を置く
             }
-            break;  //ループを抜ける
           }
         } else if (up == -1 && side == -2) {
           if (s[a - 1][b - i] == opponent &&
@@ -60,7 +56,6 @@ void decision(int a, int b, int myturn, int opponent, int space, int counter,
             for (k = kk; k <= i; k++) {   //ループカウンタ
               s[a - 1][b - k] = myturn;   //自石(判定)を置く
             }
-            // break;  //ループを抜ける
           }
         }
       }
