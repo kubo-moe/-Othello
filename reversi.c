@@ -18,9 +18,8 @@ void reversi(int &a, int &b, int (&s)[8][8]) {
     s[a - 1][b - 1] = myturn;      //持石(判定)を置く
   }
   decision(a, b, myturn, opponent, space, counter,
-           s);             //上下左右の判定関数へ移動
-  display(s);              //盤面表示
-  std::cout << std::endl;  //インデント用改行
+           s);  //上下左右の判定関数へ移動
+  display(s);   //盤面表示
   if (me > you) {
     me = 0;  //値を変換する
     you = 1;
